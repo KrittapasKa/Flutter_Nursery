@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Japan NurseryApp',
+      title: 'Japan NurseryApp Krittapas',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -110,7 +110,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Japan NurseryApp"),
+        title: const Text("Japan NurseryApp Krittapas"),
         actions: [
           IconButton(
             icon: const Icon(Icons.notifications),
