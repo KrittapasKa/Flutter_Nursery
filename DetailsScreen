@@ -36,77 +36,90 @@ class _HomeState extends State<Home> {
       'name': 'ณัฐวุฒิ',
       'surname': 'สมศรี',
       'imageUrl':
-          'https://img.freepik.com/premium-photo/happy-smiling-boy-preparing-school_127093-2809.jpg'
+          'https://img.freepik.com/premium-photo/happy-smiling-boy-preparing-school_127093-2809.jpg',
+      'baseTel': "0919102301"
     },
     {
       'name': 'กานต์',
       'surname': 'ภักดี',
       'imageUrl':
-          'https://img.freepik.com/premium-photo/happy-smiling-girl-preparing-school_127093-2810.jpg'
+          'https://img.freepik.com/premium-photo/happy-smiling-girl-preparing-school_127093-2810.jpg',
+      'baseTel': "0919102302"
     },
     {
       'name': 'พงศกร',
       'surname': 'ใจดี',
       'imageUrl':
-          'https://img.freepik.com/premium-photo/happy-smiling-boy-studying-school_127093-2811.jpg'
+          'https://img.freepik.com/premium-photo/happy-smiling-boy-studying-school_127093-2811.jpg',
+      'baseTel': "0919102303"
     },
     {
       'name': 'ศิริพร',
       'surname': 'ชื่นบาน',
       'imageUrl':
-          'https://img.freepik.com/premium-photo/happy-smiling-girl-reading-book_127093-2812.jpg'
+          'https://img.freepik.com/premium-photo/happy-smiling-girl-reading-book_127093-2812.jpg',
+      'baseTel': "0919102304"
     },
     {
       'name': 'ธนาวุฒิ',
       'surname': 'แซ่หลี',
       'imageUrl':
-          'https://img.freepik.com/premium-photo/smiling-boy-raising-hand-class_127093-2813.jpg'
+          'https://img.freepik.com/premium-photo/smiling-boy-raising-hand-class_127093-2813.jpg',
+      'baseTel': "0919102305"
     },
     {
       'name': 'อาทิตยา',
       'surname': 'สุขใจ',
       'imageUrl':
-          'https://img.freepik.com/premium-photo/girl-holding-books-smiling_127093-2814.jpg'
+          'https://img.freepik.com/premium-photo/girl-holding-books-smiling_127093-2814.jpg',
+      'baseTel': "0919102306"
     },
     {
       'name': 'กิตติพงษ์',
       'surname': 'รุ่งเรือง',
       'imageUrl':
-          'https://img.freepik.com/premium-photo/smiling-boy-carrying-backpack_127093-2815.jpg'
+          'https://img.freepik.com/premium-photo/smiling-boy-carrying-backpack_127093-2815.jpg',
+      'baseTel': "0919102307"
     },
     {
       'name': 'สุพัตรา',
       'surname': 'มีสุข',
       'imageUrl':
-          'https://img.freepik.com/premium-photo/girl-smiling-with-books_127093-2816.jpg'
+          'https://img.freepik.com/premium-photo/girl-smiling-with-books_127093-2816.jpg',
+      'baseTel': "0919102308"
     },
     {
       'name': 'อัครพล',
       'surname': 'สุขุม',
       'imageUrl':
-          'https://img.freepik.com/premium-photo/boy-with-glasses-smiling_127093-2817.jpg'
+          'https://img.freepik.com/premium-photo/boy-with-glasses-smiling_127093-2817.jpg',
+      'baseTel': "0919102309"
     },
     {
       'name': 'ภัทร์',
       'surname': 'รุ่งโรจน์',
       'imageUrl':
-          'https://img.freepik.com/premium-photo/boy-laughing-holding-book_127093-2818.jpg'
+          'https://img.freepik.com/premium-photo/boy-laughing-holding-book_127093-2818.jpg',
+      'baseTel': "0919102310"
     },
     {
       'name': 'นันทนา',
       'surname': 'สุขสันต์',
       'imageUrl':
-          'https://img.freepik.com/premium-photo/smiling-girl-holding-pencil_127093-2819.jpg'
+          'https://img.freepik.com/premium-photo/smiling-girl-holding-pencil_127093-2819.jpg',
+      'baseTel': "0919102311"
     },
     {
       'name': 'กมล',
       'surname': 'ดีใจ',
       'imageUrl':
-          'https://img.freepik.com/premium-photo/happy-boy-writing-book_127093-2820.jpg'
+          'https://img.freepik.com/premium-photo/happy-boy-writing-book_127093-2820.jpg',
+      'baseTel': "0919102312"
     },
   ];
 
   void _showStudentDetails(BuildContext context, Map<String, String> student) {
+    int baseTel = 993243420;
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -130,7 +143,7 @@ class _HomeState extends State<Home> {
               ),
               Text('นามสกุล: ${student['surname']}',
                   style: TextStyle(fontSize: 50)),
-              Text('เบอร์โทรศัพท์: 09xxxxxxxx',
+              Text('เบอร์โทรศัพท์: ${student['baseTel']}',
                   style:
                       TextStyle(fontSize: 50)), // Placeholder for phone number
             ],
@@ -180,7 +193,6 @@ class _HomeState extends State<Home> {
           itemCount: students.length, // Number of items in the grid
           itemBuilder: (context, index) {
             final student = students[index];
-            int baseTel = 993243420; // Corrected phone number base
             return GestureDetector(
               onTap: () {
                 _showStudentDetails(context, student);
@@ -198,7 +210,7 @@ class _HomeState extends State<Home> {
                     const SizedBox(height: 1),
                     Text('นักเรียน ${index + 1}'),
                     Text('${student['name']} ${student['surname']}'),
-                    Text('0${baseTel + index + 1}') // Incremented phone number
+                    Text('0${student['baseTel']}') // Incremented phone number
                   ],
                 ),
               ),
